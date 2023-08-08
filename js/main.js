@@ -1,14 +1,16 @@
 
+let title = document.getElementById("title")
+let titleError = document.getElementById("titleError")
 let fName = document.getElementById("fName")
 let midName = document.getElementById("midName")
 let lName = document.getElementById("lName")
 let dob = document.getElementById("dob")
 let gender = document.getElementById("gender")
 let compulsory = document.getElementById("compulsory")
-let hobbies = document.getElementById("hobbies")
-let likes = document.getElementById("likes")
-let dislikes = document.getElementById("dislikes")
-let colour = document.getElementById("colour")
+let worktype = document.getElementById("worktype")
+let experience = document.getElementById("experience")
+let skill = document.getElementById("skill")
+let degree = document.getElementById("degree")
 let btn = document.getElementById("btn")
 let fnameError = document.getElementById("fnameError")
 let lnameError = document.getElementById("lNameError")
@@ -28,38 +30,35 @@ let marital = document.getElementById("marital")
 let maritalError = document.getElementById("maritalError")
 let phone = document.getElementById("phone")
 let phoneError = document.getElementById("phoneError")
-
-
-
-
-let colourError = document.getElementById("colourError")
-let hobbiesError = document.getElementById("hobbiesError")
-let likesError = document.getElementById("likesError")
-let dislikesError = document.getElementById("dislikesError")
-let friends = document.getElementById("friends")
-let friendsError = document.getElementById("friendsError")
-let people = document.getElementById("people")
-let peopleError = document.getElementById("peopleError")
+let degreeError = document.getElementById("degreeError")
+let worktypeError = document.getElementById("worktypeError")
+let experienceError = document.getElementById("experienceError")
+let skillError = document.getElementById("skillError")
+let employment = document.getElementById("employment")
+let employmentError = document.getElementById("employmentError")
+let salary = document.getElementById("salary")
+let salaryError = document.getElementById("salaryError")
 let termsError = document.getElementById("termsError")
 let messageTxt = document.getElementById("messageTxt")
 
 
 
+let regionPoint = 0
+let languagePoint = 0
+let maritalPoint = 0
+let genderPoint = 0
+let religionPoint = 0
 
+let degreePoint = 0
+let worktypePoint = 0
+let experiencePoint = 0
+let skillPoint = 0
+let employmentPoint = 0
+let salaryPoint = 0
 
-
-
-
-
-
-let colourPoint = 0
-let hobbiesPoint = 0
-let likesPoint = 0
-let dislikesPoint = 0
-let friendsPoint = 0
-let peoplePoint = 0
-
-let personality
+let bio
+let qualification
+let totalScore
 
 // btn.addEventListener("click", function (e) {
 //     e.preventDefault()
@@ -71,6 +70,15 @@ btn.addEventListener("click", function () {
 })
 
 function validateData() {
+
+    if (title.value == "") {
+        titleError.innerHTML = "*Required"
+    }
+    else {
+        titleError.innerHTML = ""
+    }
+
+    console.log(title.value);
 
     if (fName.value == "") {
         fnameError.innerHTML = "*Required"
@@ -156,47 +164,46 @@ function validateData() {
         passportError.innerHTML = ""
     }
 
-
-    if (hobbies.value == "") {
-        hobbiesError.innerHTML = "*Required"
+    if (worktype.value == "") {
+        worktypeError.innerHTML = "*Required"
     }
     else {
-        hobbiesError.innerHTML = ""
+        worktypeError.innerHTML = ""
     }
 
-    if (likes.value == "") {
-        likesError.innerHTML = "*Required"
+    if (experience.value == "") {
+        experienceError.innerHTML = "*Required"
     }
     else {
-        likesError.innerHTML = ""
+        experienceError.innerHTML = ""
     }
 
-    if (dislikes.value == "") {
-        dislikesError.innerHTML = "*Required"
+    if (skill.value == "") {
+        skillError.innerHTML = "*Required"
     }
     else {
-        dislikesError.innerHTML = ""
+        skillError.innerHTML = ""
     }
 
-    if (colour.value == "") {
-        colourError.innerHTML = "*Required"
+    if (degree.value == "") {
+        degreeError.innerHTML = "*Required"
     }
     else {
-        colourError.innerHTML = ""
+        degreeError.innerHTML = ""
     }
 
-    if (friends.value == "") {
-        friendsError.innerHTML = "*Required"
+    if (employment.value == "") {
+        employmentError.innerHTML = "*Required"
     }
     else {
-        friendsError.innerHTML = ""
+        employmentError.innerHTML = ""
     }
 
-    if (people.value == "") {
-        peopleError.innerHTML = "*Required"
+    if (salary.value == "") {
+        salaryError.innerHTML = "*Required"
     }
     else {
-        peopleError.innerHTML = ""
+        salaryError.innerHTML = ""
     }
     if (termsConditions.checked == "") {
         termsError.innerHTML = "* Kindly Check the box"
@@ -204,126 +211,173 @@ function validateData() {
         termsError.innerHTML = ""
     }
 
-    if (fName.value != "" && lName.value != "" && dob.value != "" && gender.value != "" && religion.value != "" && region.value != "" && address.value != "" && language.value != "" && email.value != "" && marital.value != "" && phone.value != "" && passport.value != "" && hobbies.value != "" && likes.value != "" && dislikes.value != "" && colour.value != "" && friends.value != "" && people.value != "" && termsConditions.checked != "") {
+    if (title.value != "" && fName.value != "" && lName.value != "" && dob.value != "" && gender.value != "" && religion.value != "" && region.value != "" && address.value != "" && language.value != "" && email.value != "" && marital.value != "" && phone.value != "" && passport.value != "" && worktype.value != "" && experience.value != "" && skill.value != "" && degree.value != "" && employment.value != "" && salary.value != "" && termsConditions.checked != "")
+    
+        firstTest()
+}
 
-        proceed()
-    }
+function firstTest() {
 
-    function proceed() {
-
-        if (colour.value == "1") {
-            colourPoint += 50
-        } else if (colour.value == "2") {
-            colourPoint += 40
-        } else if (colour.value == "3") {
-            colourPoint += 30
-        } else if (colour.value == "4") {
-            colourPoint += 20
+        if (gender.value == "1") {
+                    genderPoint += 15
+        } else if (gender.value == "2") {
+                    genderPoint += 15
         } else {
-            colourPoint += 10
+                    genderPoint += 0
         }
 
-        if (hobbies.value == "1") {
-            hobbiesPoint += 50
-        } else if (hobbies.value == "2") {
-            hobbiesPoint += 40
-        } else if (hobbies.value == "3") {
-            hobbiesPoint += 30
-        } else if (hobbies.value == "4") {
-            hobbiesPoint += 20
+        if (religion.value == "1") {
+            religionPoint += 15
+        } else if (religion.value == "2") {
+            religionPoint += 15
         } else {
-            hobbiesPoint += 10
+            religionPoint += 10
         }
 
-        if (likes.value == "1") {
-            likesPoint += 50
-        } else if (likes.value == "2") {
-            likesPoint += 40
-        } else if (likes.value == "3") {
-            likesPoint += 30
-        } else if (likes.value == "4") {
-            likesPoint += 20
+        if (region.value == "1") {
+            regionPoint += 15
+        } else if (region.value == "2") {
+            regionPoint += 12
+        } else if (region.value == "3") {
+            regionPoint += 10
+        } else if (region.value == "4") {
+            regionPoint += 8
         } else {
-            likesPoint += 10
+            regionPoint += 5
         }
 
-        if (dislikes.value == "1") {
-            dislikesPoint += 50
-        } else if (dislikes.value == "2") {
-            dislikesPoint += 40
-        } else if (dislikes.value == "3") {
-            dislikesPoint += 30
-        } else if (dislikes.value == "4") {
-            dislikesPoint += 20
+        if (language.value == "1") {
+            languagePoint += 15
+        } else if (language.value == "2") {
+            languagePoint += 12
+        } else if (language.value == "3") {
+            languagePoint += 10
+        } else if (language.value == "4") {
+            languagePoint += 8
         } else {
-            dislikesPoint += 10
+            languagePoint += 5
         }
 
-        if (friends.value == "1") {
-            friendsPoint += 50
-        } else if (friends.value == "2") {
-            friendsPoint += 40
-        } else if (friends.value == "3") {
-            friendsPoint += 30
-        } else if (friends.value == "4") {
-            friendsPoint += 20
+        if (marital.value == "1") {
+                maritalPoint += 15
+        } else if (marital.value == "2") {
+                maritalPoint += 8
+        } else if (marital.value == "3") {
+                maritalPoint += 12
         } else {
-            friendsPoint += 10
+                maritalPoint += 5
         }
 
-        if (people.value == "1") {
-            peoplePoint += 50
-        } else if (people.value == "2") {
-            peoplePoint += 40
-        } else if (people.value == "3") {
-            peoplePoint += 30
-        } else if (people.value == "4") {
-            peoplePoint += 20
+        secondTest()
+}
+
+    
+function secondTest() {
+
+        if (degree.value == "1") {
+            degreePoint += 14
+        } else if (degree.value == "2") {
+            degreePoint += 11
+        } else if (degree.value == "3") {
+            degreePoint += 8
         } else {
-            peoplePoint += 10
+            degreePoint += 5
+        }
+
+        if (skill.value == "1") {
+            skillPoint += 14
+        } else if (skill.value == "2") {
+            skillPoint += 11
+        } else if (skill.value == "3") {
+            skillPoint += 8
+        } else {
+            skillPoint += 5
+        }
+
+        if (experience.value == "1") {
+            experiencePoint += 14
+        } else if (experience.value == "2") {
+            experiencePoint += 11
+        } else if (experience.value == "3") {
+            experiencePoint += 8
+        } else {
+            experiencePoint += 5
+        }
+
+        if (worktype.value == "1") {
+            worktypePoint += 14
+        } else if (worktype.value == "2") {
+            worktypePoint += 10
+        } else {
+            worktypePoint += 7
+        }
+
+        if (employment.value == "1") {
+            employmentPoint += 5
+        } else {
+            employmentPoint += 3
+        }
+
+        if (salary.value == "1") {
+            salaryPoint += 14
+        } else if (salary.value == "2") {
+            salaryPoint += 11
+        } else if (salary.value == "3") {
+            salaryPoint += 8
+        } else {
+            salaryPoint += 5
         }
 
         process()
-    }
+}
 
-    function process() {
+function process() {
 
-        personality = colourPoint + hobbiesPoint + likesPoint + dislikesPoint + friendsPoint + peoplePoint
+        bio = genderPoint + religionPoint + regionPoint + languagePoint + maritalPoint
 
-        if (personality >= 166 && personality <= 200) {
-            alert("Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an AMBIVERT")
-            // messageTxt.innerHTML = "Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an AMBIVERT"
-            // messageTxt.style.color = "green"
-        } else if (personality >= 131 && personality >= 165) {
-            alert("Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an EXTROVERT")
-            // messageTxt.innerHTML = "Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an EXTROVERT"
-            // messageTxt.style.color = "blue"
-        } else if (personality >= 96 && personality <= 130) {
-            alert("Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an INTROVERT")
-            // messageTxt.innerHTML = "Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an INTROVERT"
-            // messageTxt.style.color = "grey"
+        qualification = degreePoint + skillPoint + experiencePoint + worktypePoint + employmentPoint + salaryPoint
+
+        totalScore = (bio + qualification)/2
+
+        console.log(bio);
+        console.log(qualification);
+        console.log(totalScore);
+
+        if (totalScore <= 80) {
+            // alert(title.value + "" + fName.value + " " + midName.value + " " + lName.value  + ", " + "You have been accepted, a letter with details for the interview has been sent to your mail")
+            messageTxt.innerHTML = title.value + " " + fName.value + " " + midName.value + " " + lName.value  + ", " + "You have been accepted, a letter with details for the interview has been sent to your mail"
+            messageTxt.style.color = "green"
         } else {
-            alert("Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + "from your submission you are an OMNIVERT")
-            // messageTxt.innerHTML = "Dear, " + fName.value + " " + midName.value + " " + lName.value  + " " + " from your submission you are an OMNIVERT"
-            // messageTxt.style.color = "black"
+            // alert(title.value + "" + fName.value + " " + midName.value + " " + lName.value  + ", " + "you have been rejected")
+            messageTxt.innerHTML = title.value + " " + fName.value + " " + midName.value + " " + lName.value  + ", " + "you have been rejected"
+            messageTxt.style.color = "red"
         }
-    }
-
-    endPrediction()
+        
+        endPrediction()
 }
 
 function endPrediction() {
 
+    title.value = ""
     fName.value = ""
+    midName.value = ""
     lName.value = ""
     dob.value = ""
     gender.value = ""
-    hobbies.value = ""
-    likes.value = ""
-    dislikes.value = ""
-    colour.value = ""
-    friends.value = ""
-    people.value = ""
+    religion.value = ""
+    region.value = ""
+    address.value = ""
+    language.value = ""
+    email.value = ""
+    marital.value = ""
+    phone.value = ""
+    passport.value = ""
+    worktype.value = ""
+    experience.value = ""
+    skill.value = ""
+    degree.value = ""
+    employment.value = ""
+    salary.value = ""
     termsConditions.checked = ""
     
 }

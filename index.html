@@ -17,7 +17,21 @@
 
 
                 <div class="txt">
-                    <h2>Biodata</h2>
+                    <h2>Biodata <span><hr></span></h2>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label for="" class="topLabel">Title</label><br>
+                        <select name="" id="title">
+                            <option value="" class="none">Select your <title></title></option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Dr">Dr</option>
+                        </select><br>
+                        <label for="" id="titleError"></label>
+                    </div>
                 </div>
 
                 <div class="flex">
@@ -49,7 +63,8 @@
                         <select name="" id="gender">
                             <option value="" class="none">Select Gender</option>
                             <option value="1">Male</option>
-                            <option value="1">Female</option>
+                            <option value="2">Female</option>
+                            <option value="3">Rather not say</option>
                         </select><br>
                         <label for="" id="genderError"></label>
                     </div><br>
@@ -58,8 +73,8 @@
                         <select name="" id="religion">
                             <option value="" class="none">Select Religion</option>
                             <option value="1">Christianity</option>
-                            <option value="1">Islam</option>
-                            <option value="1">Others</option>
+                            <option value="2">Islam</option>
+                            <option value="3">Others</option>
                         </select><br>
                         <label for="" id="religionError"></label>
                     </div>
@@ -83,7 +98,7 @@
                     <div>
                         <label for="" class="topLabel">Language</label><br>
                         <select name="" id="language">
-                            <option value="" class="none">Select your spoken language</option>
+                            <option value="" class="none">Select your Spoken Language</option>
                             <option value="1">Arabic</option>
                             <option value="2">Portugues</option>
                             <option value="3">German</option>
@@ -127,105 +142,84 @@
 
                 <div class="flex">
                     <div>
-                        <label for="" class="topLabel">Upload a Recent Passport  <span>(Passport should not be larger than 750kb)</span></label><br>
+                        <label for="" class="topLabel">Upload a Recent Passport <br> <span>(*Passport Taken in the Last 6 Months.
+                        *Passport should not be larger than 750kb)</span></label><br>
                         <input type="file" id="passport" maxlength=11 placeholder="passport"><br>
                         <label for="" id="passportError"></label>
                     </div>
                 </div>
 
                 <div class="txt">
-                    <h2>Educational Background</h2>
+                    <h2>Qualification <span><hr></span></h2>
                 </div>
 
                 <div class="flex">
                     <div>
-                        <label for="" class="topLabel">Color that best describes your personality</label><br>
-                        <select name="" id="colour">
-                            <option value="" class="none">Select the color that best describes you</option>
-                            <option value="1">Bright Colours</option>
-                            <option value="2">Neutral Colours</option>
-                            <option value="3">Dark Colours</option>
-                            <option value="4">Any Colour</option>
+                        <label for="" class="topLabel">Highest Level of Education</label><br>
+                        <select name="" id="degree">
+                            <option value="" class="none">Select your Highest Certificate Acquired</option>
+                            <option value="3">Bachelors Degree (BSc)</option>
+                            <option value="4">Diploma</option>
+                            <option value="1">Doctorate Degree (PhD)</option>
+                            <option value="2">Masters Degree (MSc)</option>
                         </select><br>
-                        <label for="" id="colourError"></label>
+                        <label for="" id="degreeError"></label>
                     </div><br>
                     <div>
-                        <label for="" class="topLabel">Hobbies</label><br>
-                        <select name="" id="hobbies">
-                            <option value="" class="none">Select a hobby</option>
-                            <option value="1">Sleeping</option>
-                            <option value="2">Drawing</option>
-                            <option value="3">Going out</option>
-                            <option value="4">Reading Books</option>
-                            <option value="1">Staying Indoors</option>
-                            <option value="2">Playing Games</option>
-                            <option value="4">Discovering New Things</option>
-                            <option value="3">Hanging Out with friends & family</option>
+                        <label for="" class="topLabel">Skill Set</label><br>
+                        <select name="" id="skill">
+                            <option value="" class="none">Select a Skill Set</option>
+                            <option value="1">Hybrid skills</option>
+                            <option value="2">Job-specific skills</option>
+                            <option value="4">Soft skills</option>
+                            <option value="3">Technical Skills</option>
                         </select><br>
-                        <label for="" id="hobbiesError"></label>
+                        <label for="" id="skillError"></label>
                     </div><br>
                     <div>
-                        <label for="" class="topLabel">Likes</label><br>
-                        <select name="" id="likes">
-                            <option value="" class="none">Select your something you like</option>
-                            <option value="1">Sports</option>
-                            <option value="2">Playing Games</option>
-                            <option value="3">Movies</option>
-                            <option value="4">Music</option>
-                            <option value="1">Dancing</option>
-                            <option value="2">Singing</option>
-                            <option value="3">Learning a new skill</option>
-                            <option value="4">Reading</option>
-                            <option value="1">Money</option>
-                            <option value="2">Dogs</option>
-                            <option value="3">Eating</option>
-                            <option value="4">Social Media</option>
+                        <label for="" class="topLabel">Work Experience</label><br>
+                        <select name="" id="experience">
+                            <option value="" class="none">Working Experience</option>
+                            <option value="1">10 Years & Above</option>
+                            <option value="2">5-9 Years</option>
+                            <option value="3">3-4 Years</option>
+                            <option value="4">1-2 Years</option>
                         </select><br>
-                        <label for="" id="likesError"></label>
+                        <label for="" id="experienceError"></label>
                     </div><br>
                 </div>
 
                 <div class="flex">
                     <div>
-                        <label for="" class="topLabel">Dislikes</label><br>
-                        <select name="" id="dislikes">
-                            <option value="" class="none">Select your something you dislike</option>
-                            <option value="1">Going out</option>
-                            <option value="3">Reading</option>
-                            <option value="2">Sports</option>
-                            <option value="4">Staying indoors</option>
-                            <option value="1">Bathing</option>
-                            <option value="3">Vegetable</option>
-                            <option value="2">Travelling</option>
-                            <option value="4">Laundry</option>
-                            <option value="1">Cats</option>
-                            <option value="2">Smiling</option>
-                            <option value="3">Animals</option>
-                            <option value="4">Attention</option>
+                        <label for="" class="topLabel">Work Type</label><br>
+                        <select name="" id="worktype">
+                            <option value="" class="none">Select Work Type</option>
+                            <option value="1">Remote</option>
+                            <option value="2">On-Site</option>
+                            <option value="3">Hybrid</option>
                         </select><br>
-                        <label for="" id="dislikesError"></label>
+                        <label for="" id="worktypeError"></label>
                     </div><br>
                     <div>
-                        <label for="" class="topLabel">Social Attachment</label><br>
-                        <select name="" id="friends">
-                            <option value="" class="none">How often do you make friends</option>
-                            <option value="1">Often</option>
-                            <option value="2">Sometimes</option>
-                            <option value="3">Maybe</option>
-                            <option value="4">Indifferent</option>
+                        <label for="" class="topLabel">Employment Type</label><br>
+                        <select name="" id="employment">
+                            <option value="" class="none">Select and Employment Type</option>
+                            <option value="1">Full Time</option>
+                            <option value="2">Part Time</option>
+                            <option value="3">Contract</option>
                         </select><br>
-                        <label for="" id="friendsError"></label>
+                        <label for="" id="employmentError"></label>
                     </div><br>
                     <div>
-                        <label for="" class="topLabel">Emotional Attachment</label><br>
-                        <select name="" id="people">
-                            <option value="" class="none">Does seeing other people make you want to cry</option>
-                            <option value="1">Yes</option>
-                            <option value="2">Sometimes</option>
-                            <option value="3">Maybe</option>
-                            <option value="4">No</option>
+                        <label for="" class="topLabel">Salary Expectation</label><br>
+                        <select name="" id="salary">
+                            <option value="" class="none">Select your Expected Salary per Annum</option>
+                            <option value="1">$12,000 per annum</option>
+                            <option value="2">$25,000 per annum</option>
+                            <option value="3">$35,000 per annum</option>
+                            <option value="4">$50,000 per annum</option>
                         </select><br>
-                        <label for="" id="peopleError"></label>
+                        <label for="" id="salaryError"></label>
                     </div><br>
                 </div>
 
@@ -236,6 +230,8 @@
     </form>
     
         <div class="check">
+            <hr>
+            <br>
             <input type="checkbox" id="termsConditions" value="0"> I have read all the Terms and Conditions and I accept all information given are true</input><br>
             <label id="termsError"></label>
         </div>
@@ -244,9 +240,9 @@
         <button id="btn">Submit</button>
     </div>
 
-    <!-- <div class="txt">
+    <div class="txt2">
         <label id="messageTxt"></label>
-    </div> -->
+    </div>
 
 
 
